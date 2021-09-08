@@ -1,0 +1,15 @@
+name: pvp-snapshot-0.0.1
+version: 1.0
+author: Spook
+main: extrememc.kitpvp.Main
+commands:
+  kits:
+    aliases: [kit]
+  build:
+  spawn:
+  warp:
+  setwarp:
+    aliases: [set]
+  server:
+  admin:
+    aliases: [vanish, v]
