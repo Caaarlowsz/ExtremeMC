@@ -6,7 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/alexandre/Documents/Projetos/WaveMC/pvp - wave-mc.com/plugins/commons-0.2-snapshot-0.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/alexandre/Documents/Projetos/WaveMC/pvp - wave-mc.com/spigot.jar"/>
+	<classpathentry kind="lib" path="/APIs/PaperSpigot-1.7.10-R0.1-SNAPSHOT-latest.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
