@@ -14,7 +14,7 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
 
@@ -37,7 +37,7 @@ public class DamagerFixerListener implements Listener {
 			return;
 		}
 		final Objective below = scoreboard.registerNewObjective("lucas", "god");
-		final String kit = "§b" + KitAPI.getKitName(player);
+		final String kit = "ï¿½b" + KitAPI.getKitName(player);
 		below.setDisplayName(kit);
 		below.setDisplaySlot(DisplaySlot.BELOW_NAME);
 		new BukkitRunnable() {
@@ -45,7 +45,7 @@ public class DamagerFixerListener implements Listener {
 				scoreboard.clearSlot(DisplaySlot.BELOW_NAME);
 				below.unregister();
 			}
-		}.runTaskLater(Main.getPlugin(), 20L);
+		}.runTaskLater(ExtremePvP.getPlugin(), 20L);
 	}
 
 	@EventHandler

@@ -1,9 +1,11 @@
-package extrememc.kitpvp;
+package com.github.caaarlowsz.extrememc.kitpvp;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.github.caaarlowsz.kitpvpapi.KitPvP;
+import com.github.caaarlowsz.kitpvpapi.KitPvPAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -26,29 +28,49 @@ import extrememc.kitpvp.commands.SetwarpCommand;
 import extrememc.kitpvp.commands.SpawnCommand;
 import extrememc.kitpvp.scoreboard.Scoreboarding;
 
-public class Main extends JavaPlugin {
+public class ExtremePvP extends JavaPlugin implements KitPvP {
+
+	@Override
+	public void onEnable() {
+		super.onEnable();
+		KitPvPAPI.setInstance(this);
+
+		// TODO: Remover quando melhorar a classe principal
+		this.enable();
+	}
+
+	@Override
+	public void onDisable() {
+		super.onDisable();
+
+		// TODO: Remover quando melhorar a classe principal
+		this.disable();
+	}
+
+	// TODO: Melhorar a classe principal
+
 	public static ArrayList<Player> checkBelowName;
-	public static Main instance;
+	public static ExtremePvP instance;
 	public static Plugin plugin;
 	public static boolean fullkit;
 	public static ArrayList<UUID> scoreboard;
 
 	static {
-		Main.checkBelowName = new ArrayList<Player>();
-		Main.scoreboard = new ArrayList<UUID>();
+		ExtremePvP.checkBelowName = new ArrayList<Player>();
+		ExtremePvP.scoreboard = new ArrayList<UUID>();
 	}
 
-	public static Main getInstance() {
-		return Main.instance;
+	public static ExtremePvP getInstance() {
+		return ExtremePvP.instance;
 	}
 
 	public static Plugin getPlugin() {
-		return Main.plugin;
+		return ExtremePvP.plugin;
 	}
 
-	public void onEnable() {
-		Main.instance = this;
-		Main.plugin = this;
+	public void enable() {
+		ExtremePvP.instance = this;
+		ExtremePvP.plugin = this;
 		Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 		Player[] onlinePlayers;
 		for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
@@ -71,7 +93,7 @@ public class Main extends JavaPlugin {
 		ListenerManager.loadListener();
 		this.loadCommand();
 		Scoreboarding.updateScore();
-		Main.fullkit = false;
+		ExtremePvP.fullkit = false;
 	}
 
 	public void loadCommand() {
@@ -87,10 +109,10 @@ public class Main extends JavaPlugin {
 		this.getCommand(name).setExecutor(command);
 	}
 
-	public void onDisable() {
+	public void disable() {
 		HandlerList.unregisterAll();
-		Main.instance = null;
-		Main.plugin = null;
+		ExtremePvP.instance = null;
+		ExtremePvP.plugin = null;
 		Player[] onlinePlayers;
 		for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
 			final Player todos = onlinePlayers[i];

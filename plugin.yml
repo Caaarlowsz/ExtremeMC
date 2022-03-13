@@ -1,7 +1,7 @@
 name: pvp-snapshot-0.0.1
 version: 1.0
 author: Spook
-main: extrememc.kitpvp.Main
+main: com.github.caaarlowsz.extrememc.kitpvp.Main
 commands:
   kits:
     aliases: [kit]

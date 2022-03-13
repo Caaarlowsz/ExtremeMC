@@ -2,6 +2,7 @@ package extrememc.kitpvp.api.hability;
 
 import java.util.HashMap;
 
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -121,29 +122,29 @@ public class KitAPI {
 		player.setFireTicks(0);
 		player.setHealth(20.0);
 		player.setFlying(false);
-		inv.setItem(13, ItemBuilder.criarItem(Material.RED_MUSHROOM, "§aCogumelo Vermelho", 64));
-		inv.setItem(14, ItemBuilder.criarItem(Material.BROWN_MUSHROOM, "§aCogumelo Marrom", 64));
-		inv.setItem(15, ItemBuilder.criarItem(Material.BOWL, "§aPote", 64));
+		inv.setItem(13, ItemBuilder.criarItem(Material.RED_MUSHROOM, "ï¿½aCogumelo Vermelho", 64));
+		inv.setItem(14, ItemBuilder.criarItem(Material.BROWN_MUSHROOM, "ï¿½aCogumelo Marrom", 64));
+		inv.setItem(15, ItemBuilder.criarItem(Material.BOWL, "ï¿½aPote", 64));
 		for (int i = 0; i < 34; ++i) {
 			inv.addItem(ItemBuilder.criarItem(Material.MUSHROOM_SOUP));
 		}
 		final ItemStack swordpvp = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta swordPvPMeta = swordpvp.getItemMeta();
 		swordPvPMeta.spigot().setUnbreakable(true);
-		swordPvPMeta.setDisplayName("§aEspada");
+		swordPvPMeta.setDisplayName("ï¿½aEspada");
 		swordPvPMeta.addEnchant(Enchantment.DAMAGE_ALL, 1, true);
 		swordpvp.setItemMeta(swordPvPMeta);
 		final ItemStack sword = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta swordMeta = sword.getItemMeta();
 		swordMeta.spigot().setUnbreakable(true);
-		swordMeta.setDisplayName("§aEspada");
+		swordMeta.setDisplayName("ï¿½aEspada");
 		sword.setItemMeta(swordMeta);
 		if (hasKit(player, Kits.PVP)) {
 			inv.setItem(0, swordpvp);
 		} else {
 			inv.setItem(0, sword);
 		}
-		inv.setItem(8, ItemBuilder.criarItem(Material.COMPASS, "§aB\u00fassola"));
+		inv.setItem(8, ItemBuilder.criarItem(Material.COMPASS, "ï¿½aB\u00fassola"));
 		player.setGameMode(GameMode.SURVIVAL);
 		player.updateInventory();
 	}
@@ -191,7 +192,7 @@ public class KitAPI {
 		if (kit.equals(Kits.GLADIATOR)) {
 			inv.setItem(1,
 					ItemBuilder.criarItem(Material.IRON_FENCE, String.valueOf(Strings.primaryColor) + "Gladiator"));
-			inv.setItem(2, ItemBuilder.criarItem(Material.COBBLESTONE, "§aBlocos", 16));
+			inv.setItem(2, ItemBuilder.criarItem(Material.COBBLESTONE, "ï¿½aBlocos", 16));
 			player.updateInventory();
 		}
 		if (kit.equals(Kits.STOMPER)) {
@@ -216,61 +217,61 @@ public class KitAPI {
 			return true;
 		}
 		if (kit.equals(Kits.SPECIALIST)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.ANCHOR)) {
 			return true;
 		}
 		if (kit.equals(Kits.KANGAROO)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.FISHERMAN)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.MONK)) {
 			return true;
 		}
 		if (kit.equals(Kits.NINJA)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.PHANTOM)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.VIPER)) {
-			return Main.getInstance().getPermissions().isBeta(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isBeta(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.SNAIL)) {
-			return Main.getInstance().getPermissions().isBeta(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isBeta(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.HULK)) {
-			return Main.getInstance().getPermissions().isBeta(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isBeta(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.THOR)) {
-			return Main.getInstance().getPermissions().isBeta(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isBeta(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.SWITCHER)) {
-			return Main.getInstance().getPermissions().isBeta(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isBeta(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.GLADIATOR)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.STOMPER)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.MAGMA)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.GRANDPA)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		if (kit.equals(Kits.TURTLE)) {
-			return Main.getInstance().getPermissions().isLight(player) || extrememc.kitpvp.Main.fullkit;
+			return ExtremePvP.getInstance().getPermissions().isLight(player) || ExtremePvP.fullkit;
 		}
 		return kit.equals(Kits.ANTISTOMPER)
-				&& (Main.getInstance().getPermissions().isBeta(player) || extrememc.kitpvp.Main.fullkit);
+				&& (ExtremePvP.getInstance().getPermissions().isBeta(player) || ExtremePvP.fullkit);
 	}
 
 	public static boolean hasAllKits(final Player player) {
-		return Main.getInstance().getPermissions().isPro(player);
+		return ExtremePvP.getInstance().getPermissions().isPro(player);
 	}
 }

@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 public class WarpsAPI implements Listener {
 	public static WarpsAPI pasta;
@@ -32,7 +32,7 @@ public class WarpsAPI implements Listener {
 	}
 
 	public WarpsAPI() {
-		final Plugin plugin = Main.getPlugin();
+		final Plugin plugin = ExtremePvP.getPlugin();
 		if (!plugin.getDataFolder().exists()) {
 			plugin.getDataFolder().mkdir();
 		}
@@ -115,7 +115,7 @@ public class WarpsAPI implements Listener {
 			p.teleport(loc);
 		} else {
 			p.sendMessage(
-					"§3§lWARP §fA warp §c" + warp.name().toUpperCase() + " §fest\u00e1 em §c§lMANUTEN\u00c7\u00c3O§f.");
+					"ï¿½3ï¿½lWARP ï¿½fA warp ï¿½c" + warp.name().toUpperCase() + " ï¿½fest\u00e1 em ï¿½cï¿½lMANUTEN\u00c7\u00c3Oï¿½f.");
 		}
 	}
 
@@ -131,7 +131,7 @@ public class WarpsAPI implements Listener {
 			final Location loc = new Location(World, X, Y, Z, Yaw, Pitch);
 			p.teleport(loc);
 		} else {
-			p.sendMessage("§3§lWARP §fO local §c" + local.name().toUpperCase() + " §cainda n\u00e3o foi §a§lSETADO§f.");
+			p.sendMessage("ï¿½3ï¿½lWARP ï¿½fO local ï¿½c" + local.name().toUpperCase() + " ï¿½cainda n\u00e3o foi ï¿½aï¿½lSETADOï¿½f.");
 		}
 	}
 

@@ -25,7 +25,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import extrememc.common.adminManager.AdminManager;
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
 import extrememc.kitpvp.api.warp.WarpsAPI;
@@ -51,7 +51,7 @@ public class Listeners implements Listener {
 				player.setFoodLevel(20);
 				player.setFireTicks(0);
 			}
-		}.runTaskLater(Main.getPlugin(), 1L);
+		}.runTaskLater(ExtremePvP.getPlugin(), 1L);
 		new BukkitRunnable() {
 			public void run() {
 				WarpsAPI.setWarp(player, WarpsAPI.Warps.SPAWN);
@@ -59,20 +59,20 @@ public class Listeners implements Listener {
 				BuildCommand.Build.put(player.getName(), BuildCommand.BuildModes.OFF);
 				ProtectionManager.setProtection(player);
 			}
-		}.runTaskLater(Main.getPlugin(), 2L);
+		}.runTaskLater(ExtremePvP.getPlugin(), 2L);
 		new BukkitRunnable() {
 			public void run() {
-				Main.scoreboard.add(player.getUniqueId());
+				ExtremePvP.scoreboard.add(player.getUniqueId());
 				Scoreboarding.setScoreboard(player);
 				KitAPI.removeKit(player);
 				ManagerInventory.sendItens(player);
 				for (int i = 1; i < 100; ++i) {
 					player.sendMessage(" ");
 				}
-				player.sendMessage("§aSeja bem-vindo ao WavePvP, selecione seu kit");
-				player.sendMessage("§ae entre em nossa batalha, boa sorte!");
+				player.sendMessage("ï¿½aSeja bem-vindo ao WavePvP, selecione seu kit");
+				player.sendMessage("ï¿½ae entre em nossa batalha, boa sorte!");
 			}
-		}.runTaskLater(Main.getPlugin(), 3L);
+		}.runTaskLater(ExtremePvP.getPlugin(), 3L);
 		new BukkitRunnable() {
 			public void run() {
 				if (extrememc.common.Main.getInstance().getPermissions().isTrial(player)) {
@@ -84,14 +84,14 @@ public class Listeners implements Listener {
 					}
 				}
 			}
-		}.runTaskLater(Main.getInstance(), 20L);
+		}.runTaskLater(ExtremePvP.getInstance(), 20L);
 	}
 
 	@EventHandler
 	public void asd(final PlayerQuitEvent event) {
 		event.setQuitMessage((String) null);
 		final Player player = event.getPlayer();
-		Main.scoreboard.remove(player.getUniqueId());
+		ExtremePvP.scoreboard.remove(player.getUniqueId());
 		Scoreboarding.removeScoreboard(player);
 	}
 
@@ -205,10 +205,10 @@ public class Listeners implements Listener {
 				return;
 			}
 			if (c == null) {
-				p.sendMessage("§c* §7Nenhum jogador encontrado, bussola apotando para §bSpawn");
+				p.sendMessage("ï¿½c* ï¿½7Nenhum jogador encontrado, bussola apotando para ï¿½bSpawn");
 				p.setCompassTarget(p.getWorld().getSpawnLocation());
 			} else {
-				p.sendMessage("§a* §7Bussola apotando para §b" + c.getName());
+				p.sendMessage("ï¿½a* ï¿½7Bussola apotando para ï¿½b" + c.getName());
 				p.setCompassTarget(c.getLocation());
 			}
 		}

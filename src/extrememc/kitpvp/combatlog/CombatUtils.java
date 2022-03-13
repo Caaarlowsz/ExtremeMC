@@ -16,7 +16,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import extrememc.common.clanManager.Clan;
 import extrememc.common.playerManager.PlayerManager;
 import extrememc.common.strings.Strings;
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.hability.kits.Gladiator;
 import extrememc.kitpvp.api.warp.WarpsAPI;
 import extrememc.kitpvp.protectionManager.ProtectionManager;
@@ -57,7 +57,7 @@ public class CombatUtils implements Listener {
 		}
 		if (!inCombat(hitted) && !inCombat(hitter)) {
 			setCombat(hitter, hitted);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 				@Override
 				public void run() {
 					if (CombatUtils.inCombat(hitted) || CombatUtils.inCombat(hitter)) {
@@ -91,9 +91,9 @@ public class CombatUtils implements Listener {
 					}
 				}
 				if (jogador2.getStatusKitPvP().getStreak() % 5 == 0) {
-					Bukkit.broadcastMessage("§c§lKILLSTREAK §fO jogador " + player.getName()
-							+ " perdeu seu §4§lSTREAK §fde " + Strings.primaryColor
-							+ jogador2.getStatusKitPvP().getStreak() + " §fpara " + killer.getName());
+					Bukkit.broadcastMessage("ï¿½cï¿½lKILLSTREAK ï¿½fO jogador " + player.getName()
+							+ " perdeu seu ï¿½4ï¿½lSTREAK ï¿½fde " + Strings.primaryColor
+							+ jogador2.getStatusKitPvP().getStreak() + " ï¿½fpara " + killer.getName());
 				}
 				jogador2.getStatusKitPvP().addDeaths(1);
 				jogador2.getStatusKitPvP().resetStreak();
@@ -107,112 +107,112 @@ public class CombatUtils implements Listener {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(24);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +24 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +24 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(12);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +12 XP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +12 XP");
 					}
 				} else if (percentKillerXP == 11) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(22);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +22 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +22 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(11);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +11 XP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +11 XP");
 					}
 				} else if (percentKillerXP == 10) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(20);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +20 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +20 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(10);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +10 XP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +10 XP");
 					}
 				} else if (percentKillerXP == 9) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(18);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +18 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +18 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(9);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +9 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +9 XP");
 					}
 				} else if (percentKillerXP == 8) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(16);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +16 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +16 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(8);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +8 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +8 XP");
 					}
 				} else if (percentKillerXP == 7) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(14);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +14 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +14 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(7);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +7 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +7 XP");
 					}
 				} else if (percentKillerXP == 6) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(12);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +12 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +12 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(6);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +6 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +6 XP");
 					}
 				} else if (percentKillerXP == 5) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(10);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +10 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +10 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(5);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +5 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +5 XP");
 					}
 				} else if (percentKillerXP == 4) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(8);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +8 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +8 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(4);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +4 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +4 XP");
 					}
 				} else if (percentKillerXP == 3) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(6);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +6 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +6 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(3);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +3 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +3 XP");
 					}
 				} else if (percentKillerXP == 2) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(4);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +24 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +24 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(2);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +2 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +2 XP");
 					}
 				} else if (percentKillerXP == 1) {
 					if (extrememc.common.Main.getInstance().getPermissions().isLight(killer)) {
 						jogador.getStatusGlobal().addXP(2);
 						killer.sendMessage(
-								"§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +2 DoubleXP");
+								"ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +2 DoubleXP");
 					} else {
 						jogador.getStatusGlobal().addXP(1);
-						killer.sendMessage("§a§lMATOU §fVoc\u00ea matou o jogador §a" + player.getName() + "§f. +1 XP");
+						killer.sendMessage("ï¿½aï¿½lMATOU ï¿½fVoc\u00ea matou o jogador ï¿½a" + player.getName() + "ï¿½f. +1 XP");
 					}
 				}
 				final Clan clanKiller = extrememc.common.Main.getInstance().getClanManager().getPlayerClan(killer);
@@ -221,58 +221,58 @@ public class CombatUtils implements Listener {
 					if (numberElo == 0) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 2);
-							killer.sendMessage("§a§lCLAN §f+2 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+2 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+1 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+1 Elos");
 						}
 					} else if (numberElo == 6) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 12);
-							killer.sendMessage("§a§lCLAN §f+12 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+12 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+6 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+6 Elos");
 						}
 					} else if (numberElo == 5) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 10);
-							killer.sendMessage("§a§lCLAN §f+10 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+10 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+5 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+5 Elos");
 						}
 					} else if (numberElo == 4) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 8);
-							killer.sendMessage("§a§lCLAN §f+8 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+8 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+4 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+4 Elos");
 						}
 					} else if (numberElo == 3) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+6 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+6 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+3 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+3 Elos");
 						}
 					} else if (numberElo == 2) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 4);
-							killer.sendMessage("§a§lCLAN §f+4 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+4 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+2 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+2 Elos");
 						}
 					} else if (numberElo == 1) {
 						if (extrememc.common.Main.getInstance().getPermissions().isBeta(killer)) {
 							clanKiller.getManager().addElo(clanKiller, 2);
-							killer.sendMessage("§a§lCLAN §f+2 DoubleElo");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+2 DoubleElo");
 						} else {
 							clanKiller.getManager().addElo(clanKiller, 6);
-							killer.sendMessage("§a§lCLAN §f+1 Elos");
+							killer.sendMessage("ï¿½aï¿½lCLAN ï¿½f+1 Elos");
 						}
 					}
 					clanKiller.getManager().addKill(clanKiller);
@@ -281,20 +281,20 @@ public class CombatUtils implements Listener {
 				jogador.getStatusKitPvP().addStreak(1);
 				if (jogador.getStatusKitPvP().getStreak() > jogador.getStatusKitPvP().getMaxStreak()) {
 					jogador.getStatusKitPvP().setMaxStreak(jogador.getStatusKitPvP().getStreak());
-					Bukkit.broadcastMessage("§e§lMAXSTREAK §fO jogador " + killer.getName()
-							+ " est\u00e1 com o maior §a§lSTREAK §fdo servidor.");
+					Bukkit.broadcastMessage("ï¿½eï¿½lMAXSTREAK ï¿½fO jogador " + killer.getName()
+							+ " est\u00e1 com o maior ï¿½aï¿½lSTREAK ï¿½fdo servidor.");
 				}
 				jogador.getStatusKitPvP().save();
 				jogador.getStatusGlobal().save();
 				new BukkitRunnable() {
 					public void run() {
 						if (jogador.getStatusKitPvP().getStreak() % 5 == 0) {
-							Bukkit.broadcastMessage("§e§lKILLSTREAK §fO jogador " + killer.getName()
-									+ " est\u00e1 com um §a§lSTREAK §fde " + Strings.primaryColor
+							Bukkit.broadcastMessage("ï¿½eï¿½lKILLSTREAK ï¿½fO jogador " + killer.getName()
+									+ " est\u00e1 com um ï¿½aï¿½lSTREAK ï¿½fde " + Strings.primaryColor
 									+ jogador.getStatusKitPvP().getStreak());
 						}
 					}
-				}.runTaskLater(Main.getPlugin(), 2L);
+				}.runTaskLater(ExtremePvP.getPlugin(), 2L);
 				CombatUtils.combat.remove(player);
 				CombatUtils.combat.remove(inCombat);
 				Scoreboarding.updateKills(inCombat, inCombat.getScoreboard());
@@ -307,7 +307,7 @@ public class CombatUtils implements Listener {
 	public void command(final PlayerCommandPreprocessEvent event) {
 		if (inCombat(event.getPlayer())) {
 			event.setCancelled(true);
-			event.getPlayer().sendMessage("§c§lCOMBATE §fEsse comando esta bloqueado em combate!");
+			event.getPlayer().sendMessage("ï¿½cï¿½lCOMBATE ï¿½fEsse comando esta bloqueado em combate!");
 		}
 	}
 

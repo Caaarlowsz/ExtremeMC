@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.CooldownAPI;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
@@ -17,7 +17,7 @@ import extrememc.kitpvp.api.warp.WarpsAPI;
 public class Ninja implements Listener {
 	public static HashMap<Player, Player> a;
 	public static HashMap<Player, Long> b;
-	public static Main plugin;
+	public static ExtremePvP plugin;
 
 	static {
 		Ninja.a = new HashMap<Player, Player>();
@@ -50,12 +50,12 @@ public class Ninja implements Listener {
 					}
 					if (Gladiator.noExecut.contains(localPlayer2)) {
 						localPlayer1.sendMessage(
-								"§3§lNINJA §fO \u00faltimo jogador hitado est\u00e1 em um Gladiator no momento.");
+								"ï¿½3ï¿½lNINJA ï¿½fO \u00faltimo jogador hitado est\u00e1 em um Gladiator no momento.");
 						return;
 					}
 					if (Gladiator.noExecut.contains(localPlayer1)) {
 						localPlayer1
-								.sendMessage("§3§lNINJA §fVoc\u00ea n\u00e3o pode utilizar o kit Ninja em Gladiator.");
+								.sendMessage("ï¿½3ï¿½lNINJA ï¿½fVoc\u00ea n\u00e3o pode utilizar o kit Ninja em Gladiator.");
 						return;
 					}
 					if (Ninja.b.get(localPlayer1) != null) {
@@ -67,15 +67,15 @@ public class Ninja implements Listener {
 						CooldownAPI.addCooldown(localPlayer1, 7);
 						Ninja.b.put(localPlayer1, System.currentTimeMillis() + 10000L);
 					} else {
-						localPlayer1.sendMessage("§3§lNINJA §fO \u00faltimo jogador hitado est\u00e1 muito longe.");
+						localPlayer1.sendMessage("ï¿½3ï¿½lNINJA ï¿½fO \u00faltimo jogador hitado est\u00e1 muito longe.");
 					}
 				}
 			}
 			return;
 		}
 		if (CooldownAPI.getCooldown(localPlayer1) > 0L) {
-			localPlayer1.sendMessage("§c§lCOOLDOWN §fAguarde §c" + CooldownAPI.getCooldown(localPlayer1)
-					+ " §fsegundos para utilizar o kit!");
+			localPlayer1.sendMessage("ï¿½cï¿½lCOOLDOWN ï¿½fAguarde ï¿½c" + CooldownAPI.getCooldown(localPlayer1)
+					+ " ï¿½fsegundos para utilizar o kit!");
 			return;
 		}
 		CooldownAPI.removeCooldown(localPlayer1);
@@ -85,11 +85,11 @@ public class Ninja implements Listener {
 			if (localPlayer2 != null && !localPlayer2.isDead()) {
 				if (Gladiator.noExecut.contains(localPlayer2)) {
 					localPlayer1.sendMessage(
-							"§3§lNINJA §fO \u00faltimo jogador hitado est\u00e1 em um Gladiato no momento.");
+							"ï¿½3ï¿½lNINJA ï¿½fO \u00faltimo jogador hitado est\u00e1 em um Gladiato no momento.");
 					return;
 				}
 				if (Gladiator.noExecut.contains(localPlayer1)) {
-					localPlayer1.sendMessage("§3§lNINJA §fVoc\u00ea n\u00e3o pode utilizar o kit Ninja em Gladiator.");
+					localPlayer1.sendMessage("ï¿½3ï¿½lNINJA ï¿½fVoc\u00ea n\u00e3o pode utilizar o kit Ninja em Gladiator.");
 					return;
 				}
 				if (Ninja.b.get(localPlayer1) != null) {
@@ -101,7 +101,7 @@ public class Ninja implements Listener {
 					CooldownAPI.addCooldown(localPlayer1, 6);
 					Ninja.b.put(localPlayer1, System.currentTimeMillis() + 10000L);
 				} else {
-					localPlayer1.sendMessage("§3§lNINJA §fO \u00faltimo jogador hitado est\u00e1 muito longe.");
+					localPlayer1.sendMessage("ï¿½3ï¿½lNINJA ï¿½fO \u00faltimo jogador hitado est\u00e1 muito longe.");
 				}
 			}
 		}

@@ -17,7 +17,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
 
@@ -54,7 +54,7 @@ public class Kangaroo implements Listener {
 					}
 				}
 			} else {
-				p.sendMessage("§c§lCOMBATE §fVoc\u00ea tomou um hit recentemente!");
+				p.sendMessage("ï¿½cï¿½lCOMBATE ï¿½fVoc\u00ea tomou um hit recentemente!");
 			}
 		}
 	}
@@ -81,7 +81,7 @@ public class Kangaroo implements Listener {
 						public void run() {
 							Kangaroo.this.cooldownKangaroo.remove(p);
 						}
-					}.runTaskLater(Main.getPlugin(), 100L);
+					}.runTaskLater(ExtremePvP.getPlugin(), 100L);
 				}
 			}
 		}

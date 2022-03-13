@@ -15,7 +15,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.protectionManager.ProtectionManager;
 
 public class OnevsoneListener implements Listener {
@@ -47,7 +47,7 @@ public class OnevsoneListener implements Listener {
 			return;
 		}
 		if (OnevsoneManager.cooldown.contains(player.getUniqueId())) {
-			player.sendMessage("§c§l1V1 §fAguarde um pouco para desafiar novamente!");
+			player.sendMessage("ï¿½cï¿½l1V1 ï¿½fAguarde um pouco para desafiar novamente!");
 			return;
 		}
 		OnevsoneManager.invite.add(target.getUniqueId());
@@ -59,12 +59,12 @@ public class OnevsoneListener implements Listener {
 			OnevsoneManager.invited.remove(player.getUniqueId());
 			ProtectionManager.removeProtection(player);
 			ProtectionManager.removeProtection(target);
-			target.sendMessage("§a§l1V1 §f" + player.getName() + " aceitou seu desafio!");
-			player.sendMessage("§a§l1V1 §fVoc\u00ea aceitou o desafio do player " + target.getName());
+			target.sendMessage("ï¿½aï¿½l1V1 ï¿½f" + player.getName() + " aceitou seu desafio!");
+			player.sendMessage("ï¿½aï¿½l1V1 ï¿½fVoc\u00ea aceitou o desafio do player " + target.getName());
 			return;
 		}
-		player.sendMessage("§a§l1V1 §fVoc\u00ea desafiou o player " + target.getName());
-		target.sendMessage("§a§l1V1 §fVoc\u00ea foi desafiado por " + player.getName());
+		player.sendMessage("ï¿½aï¿½l1V1 ï¿½fVoc\u00ea desafiou o player " + target.getName());
+		target.sendMessage("ï¿½aï¿½l1V1 ï¿½fVoc\u00ea foi desafiado por " + player.getName());
 		OnevsoneManager.cooldown.add(player.getUniqueId());
 		new BukkitRunnable() {
 			public void run() {
@@ -75,7 +75,7 @@ public class OnevsoneListener implements Listener {
 					this.cancel();
 				}
 			}
-		}.runTaskLater(Main.getInstance(), 250L);
+		}.runTaskLater(ExtremePvP.getInstance(), 250L);
 	}
 
 	@EventHandler
@@ -94,7 +94,7 @@ public class OnevsoneListener implements Listener {
 			player.getInventory().setItem(5, OnevsoneManager.green_color);
 			player.updateInventory();
 			player.playSound(player.getLocation(), Sound.CLICK, 100.0f, 100.0f);
-			player.sendMessage("§a§l1V1 §fVoc\u00ea entrou na fila do 1v1 r\u00e1pido!");
+			player.sendMessage("ï¿½aï¿½l1V1 ï¿½fVoc\u00ea entrou na fila do 1v1 r\u00e1pido!");
 			if (OnevsoneManager.fast.size() == 2) {
 				final Player player_1 = OnevsoneManager.fast.get(0);
 				final Player player_2 = OnevsoneManager.fast.get(1);
@@ -110,8 +110,8 @@ public class OnevsoneListener implements Listener {
 					ProtectionManager.removeProtection(player_2);
 					OnevsoneManager.fast.remove(player_1);
 					OnevsoneManager.fast.remove(player_2);
-					player_1.sendMessage("§a§l1V1 §fVoc\u00ea ir\u00e1 batalhar contra " + player_2.getName());
-					player_2.sendMessage("§a§l1V1 §fVoc\u00ea ir\u00e1 batalhar contra " + player_1.getName());
+					player_1.sendMessage("ï¿½aï¿½l1V1 ï¿½fVoc\u00ea ir\u00e1 batalhar contra " + player_2.getName());
+					player_2.sendMessage("ï¿½aï¿½l1V1 ï¿½fVoc\u00ea ir\u00e1 batalhar contra " + player_1.getName());
 				}
 			} else {
 				new BukkitRunnable() {
@@ -122,11 +122,11 @@ public class OnevsoneListener implements Listener {
 							player.getInventory().remove(OnevsoneManager.green_color);
 							player.getInventory().setItem(5, OnevsoneManager.gray_color);
 							player.updateInventory();
-							player.sendMessage("§c§l1V1 §fNenhuma batalha foi localizada!");
+							player.sendMessage("ï¿½cï¿½l1V1 ï¿½fNenhuma batalha foi localizada!");
 							this.cancel();
 						}
 					}
-				}.runTaskLater(Main.getPlugin(), 200L);
+				}.runTaskLater(ExtremePvP.getPlugin(), 200L);
 			}
 		} else {
 			if (!player.getItemInHand().equals(OnevsoneManager.green_color)) {
@@ -140,7 +140,7 @@ public class OnevsoneListener implements Listener {
 			player.getInventory().setItem(5, OnevsoneManager.gray_color);
 			player.updateInventory();
 			player.playSound(player.getLocation(), Sound.WOOD_CLICK, 100.0f, 100.0f);
-			player.sendMessage("§c§l1V1 §fVoc\u00ea saiu da fila do 1v1 r\u00e1pido!");
+			player.sendMessage("ï¿½cï¿½l1V1 ï¿½fVoc\u00ea saiu da fila do 1v1 r\u00e1pido!");
 		}
 	}
 
@@ -149,7 +149,7 @@ public class OnevsoneListener implements Listener {
 		final Player p = e.getPlayer();
 		if (OnevsoneManager.inWarp.contains(e.getPlayer().getUniqueId())
 				&& OnevsoneManager.fighting.containsKey(p.getUniqueId())) {
-			p.sendMessage("§c§l1V1 §fComandos na warp 1v1 n\u00e3o s\u00e3o permitidos em batalha.");
+			p.sendMessage("ï¿½cï¿½l1V1 ï¿½fComandos na warp 1v1 n\u00e3o s\u00e3o permitidos em batalha.");
 			e.setCancelled(true);
 		}
 	}

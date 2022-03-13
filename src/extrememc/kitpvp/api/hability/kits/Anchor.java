@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.util.Vector;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
 
@@ -27,7 +27,7 @@ public class Anchor implements Listener {
 			p.setVelocity(new Vector());
 			p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
 			a.playSound(a.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.setVelocity(new Vector());
@@ -38,7 +38,7 @@ public class Anchor implements Listener {
 			a.playSound(a.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
 			p.setVelocity(new Vector());
 			p.playSound(a.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 				@Override
 				public void run() {
 					p.setVelocity(new Vector());

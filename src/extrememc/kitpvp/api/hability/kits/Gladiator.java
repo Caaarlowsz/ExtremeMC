@@ -25,7 +25,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
 import extrememc.kitpvp.api.warp.WarpsAPI;
@@ -100,7 +100,7 @@ public class Gladiator implements Listener {
 								final Block b = loc.clone().add(bX, bY, bZ).getBlock();
 								if (!b.isEmpty()) {
 									event.setCancelled(true);
-									p.sendMessage("§c§lERRO §fVoc\u00ea n\u00e3o pode puxar nesse local.");
+									p.sendMessage("ï¿½cï¿½lERRO ï¿½fVoc\u00ea n\u00e3o pode puxar nesse local.");
 									return;
 								}
 								if (bY == 10) {
@@ -129,7 +129,7 @@ public class Gladiator implements Listener {
 					Gladiator.noExecut.add(r);
 					Gladiator.fighting.put(p.getName(), r.getName());
 					Gladiator.fighting.put(r.getName(), p.getName());
-					Gladiator.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+					Gladiator.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 						@Override
 						public void run() {
 							if (Gladiator.fighting.containsKey(p.getName())
@@ -186,7 +186,7 @@ public class Gladiator implements Listener {
 		final double z = placed.getZ();
 		final Location sponge = new Location(w, x, y, z);
 		final Material block = e.getBlockReplacedState().getType();
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 			@Override
 			public void run() {
 				sponge.getBlock().setType(Material.COBBLESTONE);
@@ -196,7 +196,7 @@ public class Gladiator implements Listener {
 			p.setItemInHand(new ItemStack(Material.AIR));
 		}
 		p.getItemInHand().setAmount(spongesleft - 1);
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 			@Override
 			public void run() {
 				sponge.getBlock().setType(block);
@@ -220,7 +220,7 @@ public class Gladiator implements Listener {
 				&& Gladiator.fighting.containsKey(e.getPlayer().getName())) {
 			e.setCancelled(true);
 			e.getClickedBlock().setType(Material.GLASS);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 				@Override
 				public void run() {
 					if (Gladiator.fighting.containsKey(e.getPlayer().getName())) {
@@ -329,7 +329,7 @@ public class Gladiator implements Listener {
 				&& !e.getMessage().toLowerCase().startsWith("/tag") && !e.getMessage().toLowerCase().startsWith("/ban")
 				&& extrememc.common.Main.getInstance().getPermissions().isMod(p)) {
 			e.setCancelled(true);
-			p.sendMessage("§c§lCOMANDO §fEsse comando esta bloqueado durante o gladiator.");
+			p.sendMessage("ï¿½cï¿½lCOMANDO ï¿½fEsse comando esta bloqueado durante o gladiator.");
 		}
 	}
 }

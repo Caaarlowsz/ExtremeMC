@@ -14,7 +14,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.warp.WarpsAPI;
 
 public class Launchers implements Listener {
@@ -33,7 +33,7 @@ public class Launchers implements Listener {
 			final Vector sponge = player.getLocation().getDirection().multiply(0).setY(6);
 			player.setVelocity(sponge);
 			if (WarpsAPI.isInWarp(player, WarpsAPI.Warps.ARENA)) {
-				for (final Player players : Main.getInstance().getOnlinePlayers()) {
+				for (final Player players : ExtremePvP.getInstance().getOnlinePlayers()) {
 					players.playSound(loc, Sound.HORSE_JUMP, 6.0f, 1.0f);
 					players.playEffect(loc, Effect.ENDER_SIGNAL, (Object) null);
 				}

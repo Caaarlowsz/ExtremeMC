@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 public class CooldownAPI {
 	public static HashMap<String, Long> cooldown;
@@ -17,7 +17,7 @@ public class CooldownAPI {
 
 	public static void addCooldown(final Player player, final Integer time) {
 		CooldownAPI.cooldown.put(player.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(time));
-		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 			@Override
 			public void run() {
 				CooldownAPI.removeCooldown(player);

@@ -5,14 +5,14 @@ import org.bukkit.entity.Player;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 public class TeleportServer {
 	public static void sendTeleport(final Player player, final Servers server) {
 		final ByteArrayDataOutput out = ByteStreams.newDataOutput();
 		out.writeUTF("Connect");
 		out.writeUTF(server.getServer().toLowerCase());
-		player.sendPluginMessage(Main.getInstance(), "BungeeCord", out.toByteArray());
+		player.sendPluginMessage(ExtremePvP.getInstance(), "BungeeCord", out.toByteArray());
 	}
 
 	public enum Servers {

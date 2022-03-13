@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import extrememc.kitpvp.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import extrememc.kitpvp.api.CooldownAPI;
 import extrememc.kitpvp.api.hability.KitAPI;
 import extrememc.kitpvp.api.hability.Kits;
@@ -26,28 +26,28 @@ public class Phantom implements Listener {
 		Phantom.armor.put(player, player.getInventory().getArmorContents());
 		player.getInventory().setArmorContents((ItemStack[]) null);
 		player.setAllowFlight(true);
-		player.sendMessage("§3§lPHANTOM §fSeu phantom acabar\u00e1 em §c5 segundos...");
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+		player.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu phantom acabar\u00e1 em ï¿½c5 segundos...");
+		Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 			@Override
 			public void run() {
-				player.sendMessage("§3§lPHANTOM §fSeu phantom acabar\u00e1 em §c4 segundos...");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+				player.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu phantom acabar\u00e1 em ï¿½c4 segundos...");
+				Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 					@Override
 					public void run() {
-						player.sendMessage("§3§lPHANTOM §fSeu phantom acabar\u00e1 em §c3 segundos...");
-						Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+						player.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu phantom acabar\u00e1 em ï¿½c3 segundos...");
+						Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 							@Override
 							public void run() {
-								player.sendMessage("§3§lPHANTOM §fSeu phantom acabar\u00e1 em §c2 segundos...");
-								Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+								player.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu phantom acabar\u00e1 em ï¿½c2 segundos...");
+								Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(), new Runnable() {
 									@Override
 									public void run() {
-										player.sendMessage("§3§lPHANTOM §fSeu phantom acabar\u00e1 em §c1 segundo.");
-										Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(),
+										player.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu phantom acabar\u00e1 em ï¿½c1 segundo.");
+										Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getInstance(),
 												new Runnable() {
 													@Override
 													public void run() {
-														player.sendMessage("§3§lPHANTOM §fSeu phantom acabou!");
+														player.sendMessage("ï¿½3ï¿½lPHANTOM ï¿½fSeu phantom acabou!");
 														player.getInventory().setArmorContents((ItemStack[]) null);
 														player.getInventory()
 																.setArmorContents(Phantom.armor.get(player));
@@ -72,8 +72,8 @@ public class Phantom implements Listener {
 				&& CooldownAPI.cooldown.containsKey(player.getName())) {
 			event.setCancelled(true);
 			if (CooldownAPI.getCooldown(player) > 0L) {
-				player.sendMessage("§c§lCOOLDOWN §fAguarde §c" + CooldownAPI.getCooldown(player)
-						+ " §fsegundos para utilizar o kit!");
+				player.sendMessage("ï¿½cï¿½lCOOLDOWN ï¿½fAguarde ï¿½c" + CooldownAPI.getCooldown(player)
+						+ " ï¿½fsegundos para utilizar o kit!");
 				return;
 			}
 			CooldownAPI.removeCooldown(player);
